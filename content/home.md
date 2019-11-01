@@ -1,43 +1,47 @@
 ---
 title: Wohoo new title
 intro: >-
-  And from now on you're all named Bender Jr.
+  # And from now on you're all named Bender Jr.
+
 
   That's the ONLY thing about being a slave. Dr. Zoidberg, that doesn't make
   sense. But, okay! Shinier than yours, meatbag. Hey, what kinda party is this?
   There's no booze and only one hooker. Kif might!
 
 
-  I am Singing Wind, Chief of the Martians. I've got to find a way to escape the
-  horrible ravages of youth. Suddenly, I'm going to the bathroom like clockwork,
-  every three hours. And those jerks at Social Security stopped sending me
-  checks. Now 'I'' have to pay ''them'!
+  * one 
+
+  * two
+
+  * three
 
 
-  Now Fry, it's been a few years since medical school, so remind me.
-  Disemboweling in your species: fatal or non-fatal?
+  > I am Singing Wind, Chief of the Martians. I've got to find a way to escape
+  the horrible ravages of youth. Suddenly, I'm going to the bathroom like
+  clockwork, every three hours. And those jerks at Social Security stopped
+  sending me checks. Now 'I'' have to pay ''them'!
 
-  What are you hacking off? Is it my torso?! 'It is!' My precious torso!
+
+  `Now Fry, it's been a few years since medical school, so remind me.
+  Disemboweling in your species: fatal or non-fatal?`
+
+
+
+  **What are you hacking off? Is it my torso?! 'It is!' My precious torso!
   Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined
   with what would appear to be some sort of cruel muslin and the cute little
-  pom-pom curtain pull cords. Cruel though they may be…
+  pom-pom curtain pull cords. Cruel though they may be…**
 
 
-  Kids don't turn rotten just from watching TV.
-
-  They're like sex, except I'm having them!
-
-  Dear God, they'll be killed on our doorstep! And there's no trash pickup until
-  January 3rd.
-
-  Who am I making this out to?
-
-  Bender, this is Fry's decision… and he made it wrong. So it's time for us to
-  interfere in his life. Aww, it's true. I've been hiding it for so long. Fry!
-  Stay back! He's too powerful! Interesting. No, wait, the other thing: tedious.
+  1. Kids don't turn rotten just from watching TV.
+     They're like sex, except I'm having them!
+     Dear God, they'll be killed on our doorstep! And there's no trash pickup until January 3rd.
+     Who am I making this out to?
+     Bender, this is Fry's decision… and he made it wrong. So it's time for us to interfere in his life. Aww, it's true. I've been hiding it for so long. Fry! Stay back! He's too powerful! Interesting. No, wait, the other thing: tedious.
+  2. Yo
 
 
-  I am the man with no name, Zapp Brannigan!
+  `I am the man with no name, Zapp Brannigan!
 
   Now what?
 
@@ -46,7 +50,7 @@ intro: >-
   Perhaps, but perhaps your civilization is merely the sewer of an even greater
   society above you! Look, last night was a mistake. A true inspiration for the
   children. I daresay that Fry has discovered the smelliest object in the known
-  universe!
+  universe!`
 
 
   Kids have names? I love you, buddy! Then throw her in the laundry room, which
