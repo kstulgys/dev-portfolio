@@ -16,5 +16,5 @@ collections:
         file: "content/home.md"
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Intro text, name: intro, widget: text }
+          - { label: Intro text, name: intro, widget: markdown }
           - { label: Image, name: image, widget: image }
