@@ -30,7 +30,7 @@ const Header = ({ image }) => {
       <IconButton
         size="lg"
         p="0"
-        color="gray.500"
+        color="gray.700"
         aria-label="toggle theme mode"
         icon={colorMode === "light" ? "sun" : "moon"}
         onClick={toggleColorMode}
@@ -41,7 +41,7 @@ const Header = ({ image }) => {
         bg="transparent"
         border="1px"
         borderRadius="full"
-        borderColor="gray.500"
+        borderColor="gray.700"
         _hover={{
           bg: "transparent",
         }}
@@ -49,13 +49,13 @@ const Header = ({ image }) => {
     </Box>
   )
 }
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
+Header.propTypes = {
+  image: PropTypes.string,
+}
 
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
+Header.defaultProps = {
+  image: ``,
+}
 
 // export const query = graphql`
 // query {

@@ -1,5 +1,5 @@
 ---
-title: Wohoo new title
+title: Projects
 intro: >-
   # And from now on you're all named Bender Jr.
 
@@ -109,4 +109,3 @@ intro: >-
   be him!
 image: /assets/dustin-lee-jlwvautloaq-unsplash.jpg
 ---
-
