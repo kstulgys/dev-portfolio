@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Nova+Mono&display=swap");
+
+body {
+  font-family: "Nova Mono", "Lato", monospace;
+  /* font-family: "Lato", sans-serif; */
+}

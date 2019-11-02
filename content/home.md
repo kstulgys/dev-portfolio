@@ -108,4 +108,5 @@ intro: >-
   loverboy Flexo, the guy you love so much. You even love anyone pretending to
   be him!
 image: /assets/dustin-lee-jlwvautloaq-unsplash.jpg
+meImage: /assets/me.jpg
 ---
