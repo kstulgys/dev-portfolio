@@ -3,20 +3,21 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+// import Image from "../components/image"
 import SEO from "../components/seo"
+import Header from "../components/header"
+import { Box, Text, Image, Button } from "@chakra-ui/core"
 
 const IndexPage = props => {
-  const data = props.data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+  const { image, title, intro } = props.data.markdownRemark.frontmatter
   return (
     <Layout>
       <SEO title="Home" />
-      <img src={data.image} alt="homepage header" />
-      <h1>{data.title}</h1>
-      <p>{data.intro}</p>
-      {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div> */}
+      <Header image={image} />
+      <Text as="h2" fontSize="3xl">
+        {title}
+      </Text>
+      <Text>{intro}</Text>
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   )
@@ -24,19 +25,11 @@ const IndexPage = props => {
 
 export const query = graphql`
   query {
-    allFile(
-      filter: { sourceInstanceName: { eq: "content" }, name: { eq: "home" } }
-    ) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              title
-              intro
-              image
-            }
-          }
-        }
+    markdownRemark {
+      frontmatter {
+        image
+        intro
+        title
       }
     }
   }
