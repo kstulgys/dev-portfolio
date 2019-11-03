@@ -34,15 +34,16 @@ projects:
   - title: https://cricket.wiise.com
     image: /assets/estonian-saunas-hrezsflqf4i-unsplash.jpg
     description: |
-      Developed support portal for Wiise - "Created by KPMG Australia, built on
+      <p>Developed support portal for Wiise.</p>
+      <p>Wiise - "Created by KPMG Australia, built on
       Microsoft and supported by Commonwealth Bank, Wiise is clever business
-      management software".
+      management software".</p>
+      <p>- Designed UX/UI mockups.</p>
+      <p>- Participated in weekly time-boxed SCRUM meetings.</p>
+      <p>- Implemented style guide and theme.</p>
+      <p>- Build responsive and mobile first experience.</p>
+      <p>- Ensure the technical feasibility of UI/UX designs.</p>
 
-      Communicated with clients and designed UX/UI mockups.
-      Participated in weekly time-boxed SCRUM meetings.
-      Implemented style guide and theme for web applications.
-      Build responsive and mobile first experience and ensure the technical
-      feasibility of UI/UX designs.
     tags:
       - React
       - Kentico Kontent (CMS)

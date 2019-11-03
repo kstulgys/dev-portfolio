@@ -26,7 +26,7 @@ const TextTitle = props => (
   />
 )
 
-const Project = ({ title, image, description, tags }) => {
+const Project = ({ i, title, image, description, tags }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Flex
@@ -34,12 +34,12 @@ const Project = ({ title, image, description, tags }) => {
       // bg={colorMode === "light" ? "white" : "inherit"}
       minHeight="40vh"
       boxShadow="md"
-      mb={[10, 16]}
       fontFamily="Lato"
       borderRadius="lg"
       overflow="hidden"
       border="2px solid"
       borderColor="gray.200"
+      mb={[8, 0]}
     >
       {/* <Image
         display={["none", "block"]}
@@ -48,17 +48,17 @@ const Project = ({ title, image, description, tags }) => {
         objectFit="cover"
         src={image}
       /> */}
-      <Flex flexDir={["column"]} p={[4, 10]}>
+      <Flex flexDir={["column"]} p={[4, 6]}>
         <Flex>
           <Box mb="4">
             <Link isExternal href={title}>
               <Text
                 fontWeight="black"
                 fontSize="2xl"
-                textDecoration="none"
-                _hover={{
-                  textDecoration: "none",
-                }}
+                // textDecoration="none"
+                // _hover={{
+                //   textDecoration: "none",
+                // }}
               >
                 {title}
               </Text>
@@ -67,7 +67,7 @@ const Project = ({ title, image, description, tags }) => {
             <Box height="1" bg="purple.400" />
           </Box>
         </Flex>
-        <Text fontSize="lg">{description}</Text>
+        <Text fontSize="lg" dangerouslySetInnerHTML={{ __html: description }} />
         <Stack isInline mt="auto" pt="6" flexWrap="wrap">
           {tags.map(tag => (
             <Badge mt="2" variant="subtle" variantColor="purple" fontSize="md">
@@ -90,7 +90,12 @@ const IndexPage = props => {
     <Layout>
       <SEO title="Home" />
       <Header image="" meImage={meImage} />
-      <Flex mt={[0, 32]} mb="20" align="flex-start" flexDir={["column", "row"]}>
+      <Flex
+        mt={[0, 32]}
+        mb={[10, 20]}
+        align="flex-start"
+        flexDir={["column", "row"]}
+      >
         <TextTitle mb={[6, 0]}>Technologies I'm excited to work with</TextTitle>
         <Stack px={[0, 4]} isInline flexWrap="wrap">
           {technologies.map(tech => {
@@ -113,8 +118,8 @@ const IndexPage = props => {
       <Flex flexDir="column" mb="20">
         <TextTitle mb="6">Projects</TextTitle>
         <Flex flexDir={["column", "row"]} justifyContent="space-between">
-          {projects.map(props => {
-            return <Project {...props} />
+          {projects.map((props, i) => {
+            return <Project key={props.image} i={i} {...props} />
           })}
         </Flex>
       </Flex>
@@ -156,7 +161,11 @@ const IndexPage = props => {
       </Flex>
       <Flex justifyContent="center" py={10}>
         <Text>
-          Built with <Link>Gatsby</Link> and 💖
+          Built with{" "}
+          <Link isExternal href="https://www.gatsbyjs.org/">
+            Gatsby
+          </Link>{" "}
+          and 💖
         </Text>
       </Flex>
     </Layout>
