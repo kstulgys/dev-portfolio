@@ -1,65 +1,59 @@
 ---
-title: Projects
 meImage: /assets/me.jpg
-intro: >-
-  # And from now on you're all named Bender Jr.
+intro: |
+  + Passionate fullstack developer successful at completing lucrative and labor-intensive projects. <br />
+  + Over 6 years of experience doing engineering software demos, training, and technical support for clients.
+  + I get excited about opportunities to create mutually beneficial partnerships that drive growth on both sides of the relationship, specifically in the world of tech/web development. Want to connect? Feel free to email me at karolis.stulgys@gmail.com.
 
+  I have a passion to explore the latest technology advancements in the
+  web development world and a great desire to excel. Some other themes that
+  make me excited - human performance, food, longevity, powerlifting,
+  strength training, bodybuilding, meditation, yoga.
 
-  That's the ONLY thing about being a slave. Dr. Zoidberg, that doesn't make
-  sense. But, okay! Shinier than yours, meatbag. Hey, what kinda party is this?
-  There's no booze and only one hooker. Kif might!
+technologies:
+  - TypeScript
+  - JavaScript
+  - React
+  - Node
+  - GraphQL
+  - Gatsby
+  - Next
+  - MongoDB
+  - Firebase
+  - Prisma
+  - FaunaDB
+  - Apollo Client/Server
+  - Headless CMS
+  - Jest
+  - Testing-library
+  - Redux
+  - CSS-in-JS
+  - GitHub
 
-
-  * one 
-
-  * two
-
-  * three
-
-
-  > I am Singing Wind, Chief of the Martians. I've got to find a way to escape
-  the horrible ravages of youth. 
-
-
-  `Now Fry, it's been a few years since medical school, so remind me.
-  Disemboweling in your species: fatal or non-fatal?`
-
-
-  **What are you hacking off? Is it my torso?! 'It is!' My precious torso!
-  Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined
-  with what would appear to be some sort of cruel muslin and the cute little
-  pom-pom curtain pull cords. Cruel though they may be…**
-
-
-  1. Kids don't turn rotten just from watching TV.
-     They're like sex, except I'm having them
-  2. Yo
-
-
-  Kids have names? I love you, buddy! Then throw her in the laundry room, which
-  will hereafter be referred to as "the brig". Michelle, I don't regret this,
-  but I both rue and lament it. Um, is this the boring, peaceful kind of taking
-  to the streets?
-
-
-  Anyhoo, your net-suits will allow you to experience Fry's worm infested bowels
-  as if you were actually wriggling through them. There's one way and only one
-  way to determine if an animal is intelligent. Dissect its brain!
-image: /assets/dustin-lee-jlwvautloaq-unsplash.jpg
 projects:
-  project:
-    description: >-
-      Do a flip! Does anybody else feel jealous and aroused and worried? Bender,
-      this is Fry's decision… and he made it wrong. So it's time for us to
-      interfere in his life. Hey! I'm a porno-dealing monster, what do I care
-      what you think?
-
-
-      Yes, if you make it look like an electrical fire. When you do things
-      right, people won't be sure you've done anything at all. Hello Morbo,
-      how's the family? Anyhoo, your net-suits will allow you to experience
-      Fry's worm infested bowels as if you were actually wriggling through them.
-    tags: "React, Gatsby"
-    title: Some second title
+  - title: https://cricket.wiise.com
     image: /assets/estonian-saunas-hrezsflqf4i-unsplash.jpg
+    description: |
+      Developed support portal for Wiise - "Created by KPMG Australia, built on
+      Microsoft and supported by Commonwealth Bank, Wiise is clever business
+      management software".
+
+      Communicated with clients and designed UX/UI mockups.
+      Participated in weekly time-boxed SCRUM meetings.
+      Implemented style guide and theme for web applications.
+      Build responsive and mobile first experience and ensure the technical
+      feasibility of UI/UX designs.
+    tags:
+      - React
+      - Kentico Kontent (CMS)
+      - Rebass (CSS-in-JS)
+
+  - title: https://imkarolis.com
+    image: /assets/me.jpg
+    description: Developed personal portfolio website.
+    tags:
+      - React
+      - Gatsby
+      - Netlify (CMS)
+      - Chakra-ui (CSS-in-JS)
 ---

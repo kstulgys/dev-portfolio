@@ -39,7 +39,7 @@ const Header = ({ image, meImage }) => {
           boxShadow="xl"
           mx="auto"
           border="4px solid"
-          borderColor="purple.400"
+          borderColor="gray.200"
           src={meImage}
           height={[56, 64]}
           width={[56, 64]}
@@ -64,14 +64,14 @@ const Header = ({ image, meImage }) => {
             <Box height="4px" bg="purple.400" />
           </Box>
         </Flex>
-        <Text fontSize={["3xl", "4xl"]} fontFamily="Nova Mono">
+        <Text fontSize={["3xl", "4xl"]} fontFamily="Nova Mono" mt="2">
           Code and Design is my passion.
         </Text>
       </Flex>
       <IconButton
         size="lg"
         p="0"
-        color="gray.700"
+        color="purple.400"
         aria-label="toggle theme mode"
         icon={colorMode === "light" ? "sun" : "moon"}
         onClick={toggleColorMode}
@@ -81,9 +81,9 @@ const Header = ({ image, meImage }) => {
         mt={[4, 2]}
         mr={[0, 2]}
         bg="transparent"
-        border="1px"
+        // border="1px"
         borderRadius="full"
-        borderColor="gray.700"
+        // borderColor="gray.700"
         _hover={{
           bg: "transparent",
         }}
