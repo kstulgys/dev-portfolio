@@ -65,11 +65,9 @@ const TextTitle = props => (
 )
 
 const Project = ({ i, title, image, description, tags }) => {
-  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Flex
       width={["full", "48%"]}
-      // bg={colorMode === "light" ? "white" : "inherit"}
       minHeight="40vh"
       boxShadow="md"
       fontFamily="Lato"
@@ -79,25 +77,11 @@ const Project = ({ i, title, image, description, tags }) => {
       borderColor="gray.200"
       mb={[8, 0]}
     >
-      {/* <Image
-        display={["none", "block"]}
-        width="50%"
-        opacity="0.75"
-        objectFit="cover"
-        src={image}
-      /> */}
-      <Flex flexDir={["column"]} p={[4, 6]}>
+      <Flex flexDir="column" p={[4, 6]}>
         <Flex>
           <Box mb="4">
             <Link isExternal href={title}>
-              <Text
-                fontWeight="black"
-                fontSize="2xl"
-                // textDecoration="none"
-                // _hover={{
-                //   textDecoration: "none",
-                // }}
-              >
+              <Text fontWeight="black" fontSize="2xl">
                 {title}
               </Text>
             </Link>
@@ -105,19 +89,26 @@ const Project = ({ i, title, image, description, tags }) => {
             <Box height="1" bg="purple.400" />
           </Box>
         </Flex>
-        <Text fontSize="lg">
-          <Box
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
-        </Text>
-        <Stack isInline mt="auto" pt="6" flexWrap="wrap">
-          {tags.map(tag => (
-            <Badge mt="2" variant="subtle" variantColor="purple" fontSize="md">
-              {tag}
-            </Badge>
-          ))}
-        </Stack>
+        <Flex flex="1" flexDir="column">
+          <Text fontSize="lg">
+            <Box
+              id="___gatsby"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          </Text>
+          <Stack isInline mt="auto" pt="6" flexWrap="wrap">
+            {tags.map(tag => (
+              <Badge
+                mt="2"
+                variant="subtle"
+                variantColor="purple"
+                fontSize="md"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </Stack>
+        </Flex>
       </Flex>
     </Flex>
   )

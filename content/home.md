@@ -55,7 +55,11 @@ projects:
 
   - title: https://imkarolis.com
     image: /assets/me.jpg
-    description: Developed personal portfolio website.
+    description: |
+      <p>Designed and developed personal portfolio website.</p>
+      <p>- Minimal flat design.</p>
+      <p>- Light/dark mode theme.</p>
+
     tags:
       - React
       - Gatsby
