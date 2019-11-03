@@ -8,6 +8,16 @@ import SEO from "../components/seo"
 import Header from "../components/header"
 import { Flex, Box, Text, Image, Button } from "@chakra-ui/core"
 
+const Project = () => (
+  <Flex height="45vh" bg="white" boxShadow="2xl" mb="16">
+    <Image
+      width="45%"
+      // opacity="0.75"
+      objectFit="cover"
+      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
+    />
+  </Flex>
+)
 const IndexPage = props => {
   const { image, title, intro, meImage } = props.data.markdownRemark.frontmatter
   return (
@@ -18,7 +28,7 @@ const IndexPage = props => {
         as="h2"
         fontSize="3xl"
         mb="6"
-        fontWeight="bold"
+        // fontWeight="bold"
         textTransform="uppercase"
         letterSpacing="0.125em"
       >
@@ -49,11 +59,5 @@ export const query = graphql`
     }
   }
 `
-
-const Project = () => (
-  <Box height="45vh" width="full" bg="white" boxShadow="2xl" mb="6">
-    <Text mx="auto" my="auto"></Text>
-  </Box>
-)
 
 export default IndexPage

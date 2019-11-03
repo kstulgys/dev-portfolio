@@ -38,8 +38,8 @@ const Header = ({ image, meImage }) => {
         <Image
           boxShadow="xl"
           mx="auto"
-          border="10px solid"
-          borderColor="gray.200"
+          border="4px solid"
+          borderColor="purple.400"
           src={meImage}
           height={[56, 64]}
           width={[56, 64]}
@@ -56,12 +56,12 @@ const Header = ({ image, meImage }) => {
         >
           Hi, I'm Karolis 👋
         </Text>
-        <Flex justifyContent="center" my="4">
+        <Flex justifyContent="center" my="3">
           <Box>
             <Text fontSize={["2xl", "3xl"]} fontFamily="Lato" width="auto">
               A Fullstack Engineer
             </Text>
-            <Box height="2px" bg="gray.600" />
+            <Box height="4px" bg="purple.400" />
           </Box>
         </Flex>
         <Text fontSize={["3xl", "4xl"]} fontFamily="Nova Mono">

@@ -1,5 +1,6 @@
 ---
 title: Projects
+meImage: /assets/me.jpg
 intro: >-
   # And from now on you're all named Bender Jr.
 
@@ -58,8 +59,7 @@ projects:
       right, people won't be sure you've done anything at all. Hello Morbo,
       how's the family? Anyhoo, your net-suits will allow you to experience
       Fry's worm infested bowels as if you were actually wriggling through them.
-    tags: 'React, Gatsby'
+    tags: "React, Gatsby"
     title: Some second title
     image: /assets/estonian-saunas-hrezsflqf4i-unsplash.jpg
 ---
-

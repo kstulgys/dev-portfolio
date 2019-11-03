@@ -18,3 +18,44 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Intro text, name: intro, widget: markdown }
           - { label: Image, name: image, widget: image }
+          - { label: MeImage, name: meImage, widget: image }
+          - {
+              label: Projects,
+              name: projects,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Project-1,
+                    name: project-1,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        {
+                          label: Description,
+                          name: description,
+                          widget: markdown,
+                        },
+                        { label: Image, name: image, widget: image },
+                        { label: Tags, name: tags, widget: string },
+                      ],
+                  },
+                  {
+                    label: Project-2,
+                    name: project-2,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        {
+                          label: Description,
+                          name: description,
+                          widget: markdown,
+                        },
+                        { label: Image, name: image, widget: image },
+                        { label: Tags, name: tags, widget: string },
+                      ],
+                  },
+                ],
+            }

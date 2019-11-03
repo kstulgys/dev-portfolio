@@ -22,22 +22,22 @@ import {
 const Layout = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <ThemeProvider>
       <CSSReset />
       <ColorModeProvider>
         <Flex
-          color={colorMode === "light" ? "gray.800" : "gray.100"}
+          color={colorMode === "light" ? "gray.800" : "gray.200"}
           bg={colorMode === "light" ? "gray.200" : "gray.800"}
           flexDir="column"
           width="full"
