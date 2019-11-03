@@ -1,14 +1,18 @@
 ---
 meImage: /assets/me.jpg
 intro: |
-  + Passionate fullstack developer successful at completing lucrative and labor-intensive projects. <br />
-  + Over 6 years of experience doing engineering software demos, training, and technical support for clients.
-  + I get excited about opportunities to create mutually beneficial partnerships that drive growth on both sides of the relationship, specifically in the world of tech/web development. Want to connect? Feel free to email me at karolis.stulgys@gmail.com.
-
-  I have a passion to explore the latest technology advancements in the
-  web development world and a great desire to excel. Some other themes that
-  make me excited - human performance, food, longevity, powerlifting,
-  strength training, bodybuilding, meditation, yoga.
+  <p>+ Passionate fullstack developer successful at
+  completing lucrative and labor-intensive projects.</p>
+  <p>+ Over 6 years of experience doing engineering software demos,
+  training, and technical support for clients.</p>
+  <p>+ I get excited about opportunities to create mutually
+  beneficial partnerships that drive growth on both sides of the
+  relationship, specifically in the world of tech/web development. Want
+  to connect? Feel free to email me at karolis.stulgys@gmail.com.</p>
+  <br />
+  <p>Other themes that make me excited - human performance, food,
+  longevity, powerlifting, strength training, bodybuilding, meditation,
+  yoga.</p>
 
 technologies:
   - TypeScript

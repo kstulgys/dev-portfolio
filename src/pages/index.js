@@ -15,7 +15,45 @@ import {
   Link,
 } from "@chakra-ui/core"
 import { FiMail, FiFileText, FiGithub, FiLinkedin } from "react-icons/fi"
+import { FaMediumM } from "react-icons/fa"
 
+const IndexPage = props => {
+  const {
+    intro,
+    meImage,
+    projects,
+    technologies,
+  } = props.data.markdownRemark.frontmatter
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Header image="" meImage={meImage} />
+      <Technologies technologies={technologies} />
+      <Projects projects={projects} />
+      <About intro={intro} />
+      <Contact />
+      <Footer />
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query {
+    markdownRemark {
+      frontmatter {
+        intro
+        meImage
+        technologies
+        projects {
+          description
+          image
+          title
+          tags
+        }
+      }
+    }
+  }
+`
 const TextTitle = props => (
   <Text
     as="h3"
@@ -84,115 +122,90 @@ const Project = ({ i, title, image, description, tags }) => {
     </Flex>
   )
 }
-const IndexPage = props => {
-  const {
-    intro,
-    meImage,
-    projects,
-    technologies,
-  } = props.data.markdownRemark.frontmatter
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <Header image="" meImage={meImage} />
-      <Flex
-        mt={[0, 32]}
-        mb={[10, 20]}
-        align="flex-start"
-        flexDir={["column", "row"]}
-      >
-        <TextTitle mb={[6, 0]}>Technologies I'm excited to work with</TextTitle>
-        <Stack px={[0, 4]} isInline flexWrap="wrap">
-          {technologies.map(tech => {
-            return (
-              <Badge
-                // border="2px solid"
-                // borderColor="purple.200"
-                fontFamily="Lato"
-                variant="subtle"
-                variantColor="purple"
-                fontSize="xl"
-                mb="2"
-              >
-                {tech}
-              </Badge>
-            )
-          })}
-        </Stack>
-      </Flex>
-      <Flex flexDir="column" mb="20">
-        <TextTitle mb="6">Projects</TextTitle>
-        <Flex flexDir={["column", "row"]} justifyContent="space-between">
-          {projects.map((props, i) => {
-            return <Project key={props.image} i={i} {...props} />
-          })}
-        </Flex>
-      </Flex>
-      <Flex flexDir="column" mb="20">
-        <TextTitle mb="6">About</TextTitle>
-        <Text fontFamily="Lato" fontSize="lg">
-          {/* {intro} */}+ Passionate fullstack developer successful at
-          completing lucrative and labor-intensive projects.
-          <br /> + Over 6 years of experience doing engineering software demos,
-          training, and technical support for clients.
-          <br /> + I get excited about opportunities to create mutually
-          beneficial partnerships that drive growth on both sides of the
-          relationship, specifically in the world of tech/web development. Want
-          to connect? Feel free to email me at karolis.stulgys@gmail.com.
-          <br />
-          <br /> Other themes that make me excited - human performance, food,
-          longevity, powerlifting, strength training, bodybuilding, meditation,
-          yoga.
-        </Text>
-      </Flex>
-      <Flex flexDir="column" mb="20">
-        <TextTitle mb="6" textAlign="center">
-          Contact
-        </TextTitle>
-        <Stack isInline align="center" justifyContent="center" spacing={8}>
-          <Link isExternal href="mailto:karolis.stulgys@gmail.com">
-            <Box as={FiMail} size="12" strokeWidth="1" />
-          </Link>
-          <Link isExternal href="https://bit.ly/35R8qB2">
-            <Box as={FiFileText} size="12" strokeWidth="1" />
-          </Link>
-          <Link isExternal href="https://github.com/kstulgys">
-            <Box as={FiGithub} size="12" strokeWidth="1" />
-          </Link>
-          <Link isExternal href="https://www.linkedin.com/in/kstulgys/">
-            <Box as={FiLinkedin} size="12" strokeWidth="1" />
-          </Link>
-        </Stack>
-      </Flex>
-      <Flex justifyContent="center" py={10}>
-        <Text>
-          Built with{" "}
-          <Link isExternal href="https://www.gatsbyjs.org/">
-            Gatsby
-          </Link>{" "}
-          and 💖
-        </Text>
-      </Flex>
-    </Layout>
-  )
-}
 
-export const query = graphql`
-  query {
-    markdownRemark {
-      frontmatter {
-        intro
-        meImage
-        technologies
-        projects {
-          description
-          image
-          title
-          tags
-        }
-      }
-    }
-  }
-`
+const Contact = () => (
+  <Flex flexDir="column" mb="20">
+    <TextTitle mb="6" textAlign="center">
+      Contacts
+    </TextTitle>
+    <Stack isInline align="center" justifyContent="center" spacing={[3, 8]}>
+      <Link isExternal href="mailto:karolis.stulgys@gmail.com">
+        <Box as={FiMail} size="12" strokeWidth="1" />
+      </Link>
+      <Link isExternal href="https://bit.ly/35R8qB2">
+        <Box as={FiFileText} size="12" strokeWidth="1" />
+      </Link>
+      <Link isExternal href="https://github.com/kstulgys">
+        <Box as={FiGithub} size="12" strokeWidth="1" />
+      </Link>
+      <Link isExternal href="https://www.linkedin.com/in/kstulgys/">
+        <Box as={FiLinkedin} size="12" strokeWidth="1" />
+      </Link>
+      <Link isExternal href="https://medium.com/karolis-stulgys">
+        <Box as={FaMediumM} size="12" />
+      </Link>
+    </Stack>
+  </Flex>
+)
+
+const Footer = () => (
+  <Flex justifyContent="center" py={10}>
+    <Text>
+      Built with{" "}
+      <Link isExternal href="https://www.gatsbyjs.org/">
+        Gatsby
+      </Link>{" "}
+      and 💖
+    </Text>
+  </Flex>
+)
+
+const About = ({ intro }) => (
+  <Flex flexDir="column" mb="20">
+    <TextTitle mb="6">About</TextTitle>
+    <Text fontFamily="Lato" fontSize="lg">
+      <Box id="___gatsby" dangerouslySetInnerHTML={{ __html: intro }} />
+    </Text>
+  </Flex>
+)
+
+const Projects = ({ projects }) => (
+  <Flex flexDir="column" mb="20">
+    <TextTitle mb="6">Projects</TextTitle>
+    <Flex flexDir={["column", "row"]} justifyContent="space-between">
+      {projects.map((props, i) => {
+        return <Project key={props.image} i={i} {...props} />
+      })}
+    </Flex>
+  </Flex>
+)
+
+const Technologies = ({ technologies }) => (
+  <Flex
+    mt={[0, 32]}
+    mb={[10, 20]}
+    align="flex-start"
+    flexDir={["column", "row"]}
+  >
+    <TextTitle mb={[6, 0]}>Technologies I'm excited to work with</TextTitle>
+    <Stack px={[0, 4]} isInline flexWrap="wrap">
+      {technologies.map(tech => {
+        return (
+          <Badge
+            // border="2px solid"
+            // borderColor="purple.200"
+            fontFamily="Lato"
+            variant="subtle"
+            variantColor="purple"
+            fontSize="xl"
+            mb="2"
+          >
+            {tech}
+          </Badge>
+        )
+      })}
+    </Stack>
+  </Flex>
+)
 
 export default IndexPage
