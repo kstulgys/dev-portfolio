@@ -67,7 +67,12 @@ const Project = ({ i, title, image, description, tags }) => {
             <Box height="1" bg="purple.400" />
           </Box>
         </Flex>
-        <Text fontSize="lg" dangerouslySetInnerHTML={{ __html: description }} />
+        <Text fontSize="lg">
+          <Box
+            id="___gatsby"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+        </Text>
         <Stack isInline mt="auto" pt="6" flexWrap="wrap">
           {tags.map(tag => (
             <Badge mt="2" variant="subtle" variantColor="purple" fontSize="md">
