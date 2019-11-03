@@ -17,14 +17,11 @@ intro: >-
 
 
   > I am Singing Wind, Chief of the Martians. I've got to find a way to escape
-  the horrible ravages of youth. Suddenly, I'm going to the bathroom like
-  clockwork, every three hours. And those jerks at Social Security stopped
-  sending me checks. Now 'I'' have to pay ''them'!
+  the horrible ravages of youth. 
 
 
   `Now Fry, it's been a few years since medical school, so remind me.
   Disemboweling in your species: fatal or non-fatal?`
-
 
 
   **What are you hacking off? Is it my torso?! 'It is!' My precious torso!
@@ -34,23 +31,8 @@ intro: >-
 
 
   1. Kids don't turn rotten just from watching TV.
-     They're like sex, except I'm having them!
-     Dear God, they'll be killed on our doorstep! And there's no trash pickup until January 3rd.
-     Who am I making this out to?
-     Bender, this is Fry's decision… and he made it wrong. So it's time for us to interfere in his life. Aww, it's true. I've been hiding it for so long. Fry! Stay back! He's too powerful! Interesting. No, wait, the other thing: tedious.
+     They're like sex, except I'm having them
   2. Yo
-
-
-  `I am the man with no name, Zapp Brannigan!
-
-  Now what?
-
-  And then the battle's not so bad?
-
-  Perhaps, but perhaps your civilization is merely the sewer of an even greater
-  society above you! Look, last night was a mistake. A true inspiration for the
-  children. I daresay that Fry has discovered the smelliest object in the known
-  universe!`
 
 
   Kids have names? I love you, buddy! Then throw her in the laundry room, which
@@ -62,51 +44,22 @@ intro: >-
   Anyhoo, your net-suits will allow you to experience Fry's worm infested bowels
   as if you were actually wriggling through them. There's one way and only one
   way to determine if an animal is intelligent. Dissect its brain!
-
-
-  For the last time, I don't like lilacs! Your 'first' wife was the one who
-  liked lilacs! Ven ve voke up, ve had zese wodies. But existing is basically
-  all I do! Michelle, I don't regret this, but I both rue and lament it.
-
-
-  Is that a cooking show? So, how 'bout them Knicks? That's the ONLY thing about
-  being a slave. Can I use the gun? You guys aren't Santa! You're not even
-  robots. How dare you lie in front of Jesus?
-
-
-  Bender! Ship! Stop bickering or I'm going to come back there and change your
-  opinions manually! Negative, bossy meat creature! If rubbin' frozen dirt in
-  your crotch is wrong, hey I don't wanna be right.
-
-
-  I just want to talk. It has nothing to do with mating. Fry, that doesn't make
-  sense. When I was first asked to make a film about my nephew, Hubert
-  Farnsworth, I thought "Why should I?" Then later, Leela made the film. But if
-  I did make it, you can bet there would have been more topless women on
-  motorcycles. Roll film!
-
-
-  Ah, yes! John Quincy Adding Machine. He struck a chord with the voters when he
-  pledged not to go on a killing spree. We don't have a brig. Daddy Bender,
-  we're hungry. Okay, it's 500 dollars, you have no choice of carrier, the
-  battery can't hold the charge and the reception isn't very…
-
-
-  Do a flip! Does anybody else feel jealous and aroused and worried? Bender,
-  this is Fry's decision… and he made it wrong. So it's time for us to interfere
-  in his life. Hey! I'm a porno-dealing monster, what do I care what you think?
-
-
-  Yes, if you make it look like an electrical fire. When you do things right,
-  people won't be sure you've done anything at all. Hello Morbo, how's the
-  family? Anyhoo, your net-suits will allow you to experience Fry's worm
-  infested bowels as if you were actually wriggling through them.
-
-
-  I saw you with those two "ladies of the evening" at Elzars. Explain that. Kids
-  don't turn rotten just from watching TV. That's right, baby. I ain't your
-  loverboy Flexo, the guy you love so much. You even love anyone pretending to
-  be him!
 image: /assets/dustin-lee-jlwvautloaq-unsplash.jpg
-meImage: /assets/me.jpg
+projects:
+  project:
+    description: >-
+      Do a flip! Does anybody else feel jealous and aroused and worried? Bender,
+      this is Fry's decision… and he made it wrong. So it's time for us to
+      interfere in his life. Hey! I'm a porno-dealing monster, what do I care
+      what you think?
+
+
+      Yes, if you make it look like an electrical fire. When you do things
+      right, people won't be sure you've done anything at all. Hello Morbo,
+      how's the family? Anyhoo, your net-suits will allow you to experience
+      Fry's worm infested bowels as if you were actually wriggling through them.
+    tags: 'React, Gatsby'
+    title: Some second title
+    image: /assets/estonian-saunas-hrezsflqf4i-unsplash.jpg
 ---
+
