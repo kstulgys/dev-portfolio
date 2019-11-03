@@ -13,17 +13,6 @@ import {
 
 const Header = ({ image, meImage }) => {
   const { colorMode, toggleColorMode } = useColorMode()
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     markdownRemark {
-  //       frontmatter {
-  //         image
-  //         intro
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
   return (
     <Flex as="header" position="relative" my={[0, 20]}>
@@ -74,7 +63,7 @@ const Header = ({ image, meImage }) => {
         color="purple.400"
         aria-label="toggle theme mode"
         icon={colorMode === "light" ? "sun" : "moon"}
-        onClick={toggleColorMode}
+        onClick={() => toggleColorMode()}
         position="absolute"
         top="0"
         right="0"
