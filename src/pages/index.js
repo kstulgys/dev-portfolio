@@ -31,7 +31,7 @@ const Project = ({ title, image, description, tags }) => {
   return (
     <Flex
       width={["full", "48%"]}
-      bg={colorMode === "light" ? "white" : "inherit"}
+      // bg={colorMode === "light" ? "white" : "inherit"}
       minHeight="40vh"
       boxShadow="md"
       mb={[10, 16]}

@@ -26,20 +26,14 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider>
       <CSSReset />
-      {/* <ColorModeProvider> */}
-      <SEO />
-      <Flex
-        color={colorMode === "light" ? "gray.800" : "gray.200"}
-        bg={colorMode === "light" ? "gray.200" : "gray.800"}
-        flexDir="column"
-        width="full"
-        minHeight="100vh"
-      >
-        <Box as="main" maxWidth="5xl" mx="auto" px="4">
-          {children}
-        </Box>
-      </Flex>
-      {/* </ColorModeProvider> */}
+      <ColorModeProvider>
+        <SEO />
+        <Flex flexDir="column" width="full" minHeight="100vh">
+          <Box as="main" maxWidth="5xl" mx="auto" px="4">
+            {children}
+          </Box>
+        </Flex>
+      </ColorModeProvider>
     </ThemeProvider>
   )
 }
