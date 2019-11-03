@@ -18,24 +18,16 @@ import {
   ColorModeProvider,
   useColorMode,
 } from "@chakra-ui/core"
+import SEO from "./seo"
 
 const Layout = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode()
-
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
   return (
     <ThemeProvider>
       <CSSReset />
       <ColorModeProvider>
+        <SEO />
         <Flex
           color={colorMode === "light" ? "gray.800" : "gray.200"}
           bg={colorMode === "light" ? "gray.200" : "gray.800"}
@@ -46,11 +38,6 @@ const Layout = ({ children }) => {
           <Box as="main" maxWidth="5xl" mx="auto" px="4">
             {children}
           </Box>
-          {/* <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer> */}
         </Flex>
       </ColorModeProvider>
     </ThemeProvider>

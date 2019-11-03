@@ -1,11 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Karolis Stulgys personal portfolio site`,
+    description: `My name is Karolis Stulgys, I'm a fullstack web developer/engineer and this is my personal portfolio site.`,
+    author: `@imkarolis`,
   },
   plugins: [
-    `gatsby-plugin-chakra-ui`,
     "gatsby-transformer-remark",
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
@@ -35,13 +34,28 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `gatsby-starter-engineer-portfolio`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-chakra-ui",
+      options: {
+        /**
+         * @property {boolean} [isResettingCSS=true]
+         * if false, this plugin will not use `<CSSReset />
+         */
+        isResettingCSS: true,
+        /**
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
+         */
+        isUsingColorMode: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
