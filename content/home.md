@@ -1,51 +1,17 @@
 ---
-title: ok.title
-intro: >-
-  + Passionate fullstack developer successful at completing lucrative and
-  labor-intensive projects.
-
-  + Over 6 years of experience doing engineering software demos, training, and
-  technical support for clients.
-
-  + I get excited about opportunities to create mutually beneficial partnerships
-  that drive growth on both sides of the relationship, specifically in the world
-  of tech/web development. Want to connect? Feel free to email me at
-  karolis.stulgys@gmail.com.
-
-
-  Other themes that make me excited - human performance, food,
-
-  longevity, powerlifting, strength training, bodybuilding, meditation,
-
-  yoga.
-
-
-  ```
-
-  this is codeOther themes that make me excited - human performance, food,
-
-  longevity, powerlifting, strength training, bodybuilding, meditation,
-<<<<<<< HEAD
-
-  yoga.
-
-  ```
-
-
-  ## How
-
-
-  ![nice-sesk](/assets/dustin-lee-jlwvautloaq-unsplash.jpg "nice desk")
-
-
-  * you
-
-  * whats 
-
-  * up
-image: /assets/damian-stolar-dbxa2wvfzva-unsplash-1-.jpg
 meImage: /assets/me.jpg
-=======
+intro: |
+  <p>+ Passionate fullstack developer successful at
+  completing lucrative and labor-intensive projects.</p>
+  <p>+ Over 6 years of experience doing engineering software demos,
+  training, and technical support for clients.</p>
+  <p>+ I get excited about opportunities to create mutually
+  beneficial partnerships that drive growth on both sides of the
+  relationship, specifically in the world of tech/web development. Want
+  to connect? Feel free to email me at karolis.stulgys@gmail.com.</p>
+  <br />
+  <p>Other themes that make me excited - human performance, food,
+  longevity, powerlifting, strength training, bodybuilding, meditation,
   yoga.</p>
 
 technologies:
@@ -89,12 +55,14 @@ projects:
 
   - title: https://imkarolis.com
     image: /assets/me.jpg
-    description: Developed personal portfolio website.
+    description: |
+      <p> Designed and developed personal portfolio website.</p>
+      <p>- Minimal flat design.</p>
+      <p>- Light and dark mode theme.</p>
+
     tags:
       - React
       - Gatsby
       - Netlify (CMS)
       - Chakra-ui (CSS-in-JS)
->>>>>>> parent of 29e4c1c... wip
 ---
-
