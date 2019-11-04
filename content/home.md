@@ -25,6 +25,7 @@ intro: >-
   this is codeOther themes that make me excited - human performance, food,
 
   longevity, powerlifting, strength training, bodybuilding, meditation,
+<<<<<<< HEAD
 
   yoga.
 
@@ -44,5 +45,56 @@ intro: >-
   * up
 image: /assets/damian-stolar-dbxa2wvfzva-unsplash-1-.jpg
 meImage: /assets/me.jpg
+=======
+  yoga.</p>
+
+technologies:
+  - TypeScript
+  - JavaScript
+  - React
+  - Node
+  - GraphQL
+  - Gatsby
+  - Next
+  - MongoDB
+  - Firebase
+  - Prisma
+  - FaunaDB
+  - Apollo Client/Server
+  - Headless CMS
+  - Jest
+  - Testing-library
+  - Redux
+  - CSS-in-JS
+  - GitHub
+
+projects:
+  - title: https://cricket.wiise.com
+    image: /assets/estonian-saunas-hrezsflqf4i-unsplash.jpg
+    description: |
+      <p>Developed support portal for Wiise.</p>
+      <p>Wiise - "Created by KPMG Australia, built on
+      Microsoft and supported by Commonwealth Bank, Wiise is clever business
+      management software".</p>
+      <p>- Designed UX/UI mockups.</p>
+      <p>- Participated in weekly time-boxed SCRUM meetings.</p>
+      <p>- Implemented style guide and theme.</p>
+      <p>- Build responsive and mobile first experience.</p>
+      <p>- Ensure the technical feasibility of UI/UX designs.</p>
+
+    tags:
+      - React
+      - Kentico Kontent (CMS)
+      - Rebass (CSS-in-JS)
+
+  - title: https://imkarolis.com
+    image: /assets/me.jpg
+    description: Developed personal portfolio website.
+    tags:
+      - React
+      - Gatsby
+      - Netlify (CMS)
+      - Chakra-ui (CSS-in-JS)
+>>>>>>> parent of 29e4c1c... wip
 ---
 
