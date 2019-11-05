@@ -30,7 +30,6 @@ collections:
             fields:
               - label: Project
                 name: project
-                widget: object
                 fields:
                   - { label: Title, name: title, widget: string }
                   - { label: Image, name: image, widget: image }
