@@ -21,36 +21,35 @@ technologies:
   - GitHub
 
 projects:
-  - title: https://cricket.wiise.com
-    image: /assets/estonian-saunas-hrezsflqf4i-unsplash.jpg
-    description: |
-      <p>Developed support portal for Wiise.</p>
-      <p>Wiise - "Created by KPMG Australia, built on
-      Microsoft and supported by Commonwealth Bank, Wiise is clever business
-      management software".</p>
-      <p>- Designed UX/UI mockups.</p>
-      <p>- Participated in weekly time-boxed SCRUM meetings.</p>
-      <p>- Implemented style guide and theme.</p>
-      <p>- Build responsive and mobile first experience.</p>
-      <p>- Ensure the technical feasibility of UI/UX designs.</p>
-
-    tags:
-      - React
-      - Kentico Kontent (CMS)
-      - Rebass (CSS-in-JS)
-
   - title: https://imkarolis.com
     image: /assets/me.jpg
     description: |
-      <p> Designed and developed personal portfolio website.</p>
-      <p>- Minimal flat design.</p>
-      <p>- Light and dark mode theme.</p>
+      Designed and developed personal portfolio website.
+      Minimal flat design.
+      Light and dark mode theme.
 
     tags:
       - React
       - Gatsby
       - Netlify (CMS)
       - Chakra-ui (CSS-in-JS)
+
+  # - title: https://cricket.wiise.com
+  #   image: /assets/estonian-saunas-hrezsflqf4i-unsplash.jpg
+  #   description: |
+  #     <p>Developed support portal for Wiise.</p>
+  #     <p>Wiise - "Created by KPMG Australia, built on
+  #     Microsoft and supported by Commonwealth Bank, Wiise is clever business
+  #     management software".</p>
+  #     <p>- Designed UX/UI mockups.</p>
+  #     <p>- Participated in weekly time-boxed SCRUM meetings.</p>
+  #     <p>- Implemented style guide and theme.</p>
+  #     <p>- Build responsive and mobile first experience.</p>
+  #     <p>- Ensure the technical feasibility of UI/UX designs.</p>
+  #   tags:
+  #     - React
+  #     - Kentico Kontent (CMS)
+  #     - Rebass (CSS-in-JS)
 
 about: |
   <p>+ Passionate fullstack developer successful at
