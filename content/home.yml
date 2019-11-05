@@ -1,19 +1,5 @@
----
 meImage: /assets/me.jpg
-intro: |
-  <p>+ Passionate fullstack developer successful at
-  completing lucrative and labor-intensive projects.</p>
-  <p>+ Over 6 years of experience doing engineering software demos,
-  training, and technical support for clients.</p>
-  <p>+ I get excited about opportunities to create mutually
-  beneficial partnerships that drive growth on both sides of the
-  relationship, specifically in the world of tech/web development. Want
-  to connect? Feel free to email me at karolis.stulgys@gmail.com.</p>
-  <br />
-  <p>Other themes that make me excited - human performance, food,
-  longevity, powerlifting, strength training, bodybuilding, meditation,
-  yoga.</p>
-
+title: Fullstack Engineer
 technologies:
   - TypeScript
   - JavaScript
@@ -65,4 +51,17 @@ projects:
       - Gatsby
       - Netlify (CMS)
       - Chakra-ui (CSS-in-JS)
----
+
+about: |
+  <p>+ Passionate fullstack developer successful at
+  completing lucrative and labor-intensive projects.</p>
+  <p>+ Over 6 years of experience doing engineering software demos,
+  training, and technical support for clients.</p>
+  <p>+ I get excited about opportunities to create mutually
+  beneficial partnerships that drive growth on both sides of the
+  relationship, specifically in the world of tech/web development. Want
+  to connect? Feel free to email me at karolis.stulgys@gmail.com.</p>
+  <br />
+  <p>Other themes that make me excited - human performance, food,
+  longevity, powerlifting, strength training, bodybuilding, meditation,
+  yoga.</p>
