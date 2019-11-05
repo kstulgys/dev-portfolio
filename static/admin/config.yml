@@ -13,7 +13,7 @@ collections:
     files:
       - label: Home Page
         name: home
-        file: content/home.md
+        file: content/home.yml
         fields:
           - { label: Me image, name: meImage, widget: image }
           - { label: Title, name: title, widget: string }
@@ -36,8 +36,8 @@ collections:
                   - { label: Image, name: image, widget: image }
                   - { label: Description, name: sescription, widget: markdown }
                   - {
-                      label: "Tags",
-                      name: "tags",
+                      label: Tags,
+                      name: tags,
                       widget: list,
                       allow_add: true,
                       default: ["React"],
