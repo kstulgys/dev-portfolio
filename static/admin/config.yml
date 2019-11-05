@@ -8,55 +8,60 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - label: "Pages"
-    name: "pages"
+  - label: Pages
+    name: pages
     files:
-      - label: "Home Page"
-        name: "home"
-        file: "content/home.md"
+      - label: Home Page
+        name: home
+        file: content/home.md
         fields:
+          - { label: Me image, name: meImage, widget: image }
           - { label: Title, name: title, widget: string }
-          - { label: Intro text, name: intro, widget: markdown }
-          - { label: Image, name: image, widget: image }
-          - { label: MeImage, name: meImage, widget: image }
           - {
-              label: Projects,
-              name: projects,
-              create: true,
-              widget: object,
-              fields:
-                [
-                  {
-                    label: Project-1,
-                    name: project-1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Title, name: title, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: markdown,
-                        },
-                        { label: Image, name: image, widget: image },
-                        { label: Tags, name: tags, widget: string },
-                      ],
-                  },
-                  {
-                    label: Project-2,
-                    name: project-2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Title, name: title, widget: string },
-                        {
-                          label: Description,
-                          name: description,
-                          widget: markdown,
-                        },
-                        { label: Image, name: image, widget: image },
-                        { label: Tags, name: tags, widget: string },
-                      ],
-                  },
-                ],
+              label: Technologies,
+              name: technologies,
+              widget: list,
+              allow_add: true,
             }
+          - label: Projects
+            name: projects
+            widget: list
+            allow_add: true
+            fields:
+              - label: Project
+                name: project
+                widget: object
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Image, name: image, widget: image }
+                  - { label: Description, name: sescription, widget: markdown }
+                  - {
+                      label: "Tags",
+                      name: "tags",
+                      widget: list,
+                      allow_add: true,
+                      default: ["React"],
+                    }
+          - { label: About, name: about, widget: markdown }
+            # options:
+            # [
+            #   "TypeScript",
+            #   "JavaScript",
+            #   "React",
+            #   "Node",
+            #   "GraphQL",
+            #   "Gatsby",
+            #   "Next",
+            #   "MongoDB",
+            #   "Firebase",
+            #   "Prisma",
+            #   "FaunaDB",
+            #   "Apollo Client",
+            #   "Apollo Server",
+            #   "Headless CMS",
+            #   "Jest",
+            #   "Testing-library",
+            #   "Redux",
+            #   "CSS-in-JS",
+            #   "GitHub",
+            # ],

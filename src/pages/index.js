@@ -18,19 +18,24 @@ import { FiMail, FiFileText, FiGithub, FiLinkedin } from "react-icons/fi"
 import { FaMediumM } from "react-icons/fa"
 
 const IndexPage = props => {
+  console.log({ props })
   const {
-    intro,
     meImage,
-    projects,
+    about,
     technologies,
-  } = props.data.markdownRemark.frontmatter
+    title,
+    projects,
+  } = props.data.allContentYaml.nodes[0]
+
+  console.log(meImage, about, technologies, title, projects)
+
   return (
     <Layout>
       <SEO title="Home" />
-      <Header image="" meImage={meImage} />
+      <Header title={title} meImage={meImage} />
       <Technologies technologies={technologies} />
       <Projects projects={projects} />
-      <About intro={intro} />
+      <About about={about} />
       <Contact />
       <Footer />
     </Layout>
@@ -39,16 +44,17 @@ const IndexPage = props => {
 
 export const query = graphql`
   query {
-    markdownRemark {
-      frontmatter {
-        intro
+    allContentYaml {
+      nodes {
         meImage
+        about
         technologies
+        title
         projects {
           description
           image
-          title
           tags
+          title
         }
       }
     }
@@ -160,11 +166,11 @@ const Footer = () => (
   </Flex>
 )
 
-const About = ({ intro }) => (
+const About = ({ about }) => (
   <Flex flexDir="column" mb="20">
     <TextTitle mb="6">About</TextTitle>
     <Text fontFamily="Lato" fontSize="lg">
-      <Box id="___gatsby" dangerouslySetInnerHTML={{ __html: intro }} />
+      <Box id="___gatsby" dangerouslySetInnerHTML={{ __html: about }} />
     </Text>
   </Flex>
 )
