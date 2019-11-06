@@ -21,7 +21,7 @@ technologies:
   - GitHub
 
 projects:
-  - title: https://cricket.wiise.com/
+  - title: https://cricket.wiise.com
     image: /assets/me.jpg
     description: |
       Developed support portal for Wiise.
@@ -38,10 +38,24 @@ projects:
       - Kentico Kontent (CMS)
       - Rebass (CSS-in-JS)
 
+  - title: https://rpetify.netlify.com
+    image: /assets/me.jpg
+    description: |
+      Developed application for powerlifters.
+        * Calculates one rep max based on rpe (rate of perceived exertion).
+        * Calculates weights & plates on the bar for warmup & work sets.
+        * Supports kg and lbs units.
+    tags:
+      - React
+      - Redux
+      - LocalStorage
+      - Chakra-ui (CSS-in-JS)
+    github: https://github.com/kstulgys/rpetify-v2
+
   - title: https://imkarolis.com
     image: /assets/me.jpg
     description: |
-      Designed and developed personal portfolio website.
+      Developed personal portfolio website.
         * Minimal flat design.
         * Light and dark mode theme support.
     tags:
@@ -49,6 +63,7 @@ projects:
       - Gatsby
       - Netlify (CMS)
       - Chakra-ui (CSS-in-JS)
+    github: https://github.com/kstulgys/dev-portfolio
 
 about: |
   * Passionate fullstack developer successful at completing lucrative and labor-intensive projects.

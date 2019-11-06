@@ -14,6 +14,7 @@ import {
   Badge,
   useColorMode,
   Link,
+  Grid,
 } from "@chakra-ui/core"
 import { FiMail, FiFileText, FiGithub, FiLinkedin } from "react-icons/fi"
 import { FaMediumM } from "react-icons/fa"
@@ -28,7 +29,7 @@ const IndexPage = props => {
     projects,
   } = props.data.allContentYaml.nodes[0]
 
-  console.log(meImage, about, technologies, title, projects)
+  // console.log(meImage, about, technologies, title, projects)
 
   return (
     <Layout>
@@ -56,6 +57,7 @@ export const query = graphql`
           image
           tags
           title
+          github
         }
       }
     }
@@ -102,24 +104,23 @@ const Technologies = ({ technologies }) => (
   </Flex>
 )
 
-const Project = ({ i, title, image, description, tags }) => {
+const Project = ({ i, title, image, description, tags, github }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   const bgColor = { light: "white", dark: "transparent" }
   const color = { light: "gray.800", dark: "gray.100" }
 
   return (
     <Flex
-      bg={bgColor[colorMode]}
-      color={color[colorMode]}
-      width={["full", "48%"]}
-      minHeight="40vh"
+      // bg={bgColor[colorMode]}
+      // color={color[colorMode]}
+      width="full"
+      minHeight="35vh"
       boxShadow="xl"
       fontFamily="Lato"
       borderRadius="lg"
       overflow="hidden"
       border="2px solid"
       borderColor="gray.200"
-      mb={[i === 0 ? 8 : 0, 0]}
     >
       <Flex flex="1" flexDir={["column"]} p={[4, 6]}>
         <Flex>
@@ -133,7 +134,7 @@ const Project = ({ i, title, image, description, tags }) => {
                 //   textDecoration: "none",
                 // }}
               >
-                {title}
+                {title.split("//")[1]}
               </Text>
             </Link>
 
@@ -145,10 +146,17 @@ const Project = ({ i, title, image, description, tags }) => {
         </Text>
         <Stack isInline mt="6" flexWrap="wrap">
           {tags.map(tag => (
-            <Badge mt="2" variant="subtle" variantColor="purple" fontSize="md">
+            <Badge m="1" variant="subtle" variantColor="purple" fontSize="md">
               {tag}
             </Badge>
           ))}
+          {github && (
+            <Link isExternal href={github}>
+              <Badge m="1" variant="subtle" fontSize="md">
+                GitRepo
+              </Badge>
+            </Link>
+          )}
         </Stack>
       </Flex>
     </Flex>
@@ -168,9 +176,14 @@ const Projects = ({ projects }) => (
   <Flex flexDir="column" mb={[16, 20]}>
     <TextTitle>Projects</TextTitle>
     <Flex flexDir={["column", "row"]} justifyContent="space-between">
-      {projects.map((props, i) => {
-        return <Project key={props.image} i={i} {...props} />
-      })}
+      <Grid
+        gridGap="6"
+        gridTemplateColumns="repeat(auto-fit, minmax(325px, 1fr))"
+      >
+        {projects.map((props, i) => {
+          return <Project key={props.image} i={i} {...props} />
+        })}
+      </Grid>
     </Flex>
   </Flex>
 )
