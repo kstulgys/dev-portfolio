@@ -104,11 +104,13 @@ const Technologies = ({ technologies }) => (
 
 const Project = ({ i, title, image, description, tags }) => {
   const { colorMode, toggleColorMode } = useColorMode()
-  const bgColor = { light: "white", dark: "gtransparent" }
+  const bgColor = { light: "white", dark: "transparent" }
+  const color = { light: "gray.800", dark: "gray.100" }
 
   return (
     <Flex
       bg={bgColor[colorMode]}
+      color={color[colorMode]}
       width={["full", "48%"]}
       minHeight="40vh"
       boxShadow="xl"
