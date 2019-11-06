@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Markdown from "react-markdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Header from "../components/header"
@@ -66,33 +67,59 @@ const TextTitle = props => (
     fontSize="2xl"
     textTransform="uppercase"
     letterSpacing="0.125em"
+    mb={[6, 10]}
     {...props}
   />
 )
 
+const Technologies = ({ technologies }) => (
+  <Flex
+    mt={[0, 32]}
+    mb={[16, 20]}
+    align="flex-start"
+    flexDir={["column", "row"]}
+  >
+    <TextTitle mt="2" mb={[6, 0]}>
+      Technologies I'm excited to work with
+    </TextTitle>
+    <Stack px={[0, 6]} isInline flexWrap="wrap">
+      {technologies.map(tech => {
+        return (
+          <Badge
+            // border="2px solid"
+            // borderColor="purple.200"
+            fontFamily="Lato"
+            variant="subtle"
+            variantColor="purple"
+            fontSize="xl"
+            mt="2"
+          >
+            {tech}
+          </Badge>
+        )
+      })}
+    </Stack>
+  </Flex>
+)
+
 const Project = ({ i, title, image, description, tags }) => {
   const { colorMode, toggleColorMode } = useColorMode()
+  const bgColor = { light: "white", dark: "gtransparent" }
+
   return (
     <Flex
+      bg={bgColor[colorMode]}
       width={["full", "48%"]}
-      // bg={colorMode === "light" ? "white" : "inherit"}
       minHeight="40vh"
-      boxShadow="md"
+      boxShadow="xl"
       fontFamily="Lato"
       borderRadius="lg"
       overflow="hidden"
       border="2px solid"
       borderColor="gray.200"
-      mb={[8, 0]}
+      mb={[i === 0 ? 8 : 0, 0]}
     >
-      {/* <Image
-        display={["none", "block"]}
-        width="50%"
-        opacity="0.75"
-        objectFit="cover"
-        src={image}
-      /> */}
-      <Flex flexDir={["column"]} p={[4, 6]}>
+      <Flex flex="1" flexDir={["column"]} p={[4, 6]}>
         <Flex>
           <Box mb="4">
             <Link isExternal href={title}>
@@ -111,13 +138,10 @@ const Project = ({ i, title, image, description, tags }) => {
             <Box height="1" bg="purple.400" />
           </Box>
         </Flex>
-        <Text fontSize="lg">
-          <Box
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
+        <Text flex="1" fontSize="lg">
+          <Markdown source={description} />
         </Text>
-        <Stack isInline mt="auto" pt="6" flexWrap="wrap">
+        <Stack isInline mt="6" flexWrap="wrap">
           {tags.map(tag => (
             <Badge mt="2" variant="subtle" variantColor="purple" fontSize="md">
               {tag}
@@ -129,11 +153,29 @@ const Project = ({ i, title, image, description, tags }) => {
   )
 }
 
+const About = ({ about }) => (
+  <Flex flexDir="column" mb="20">
+    <TextTitle>About</TextTitle>
+    <Text fontFamily="Lato" fontSize="xl">
+      <Markdown source={about} />
+    </Text>
+  </Flex>
+)
+
+const Projects = ({ projects }) => (
+  <Flex flexDir="column" mb={[16, 20]}>
+    <TextTitle>Projects</TextTitle>
+    <Flex flexDir={["column", "row"]} justifyContent="space-between">
+      {projects.map((props, i) => {
+        return <Project key={props.image} i={i} {...props} />
+      })}
+    </Flex>
+  </Flex>
+)
+
 const Contact = () => (
   <Flex flexDir="column" mb="20">
-    <TextTitle mb="6" textAlign="center">
-      Contacts
-    </TextTitle>
+    <TextTitle textAlign="center">Contact me</TextTitle>
     <Stack isInline align="center" justifyContent="center" spacing={[3, 8]}>
       <Link isExternal href="mailto:karolis.stulgys@gmail.com">
         <Box as={FiMail} size="12" strokeWidth="1" />
@@ -163,54 +205,6 @@ const Footer = () => (
       </Link>{" "}
       and 💖
     </Text>
-  </Flex>
-)
-
-const About = ({ about }) => (
-  <Flex flexDir="column" mb="20">
-    <TextTitle mb="6">About</TextTitle>
-    <Text fontFamily="Lato" fontSize="lg">
-      <Box id="___gatsby" dangerouslySetInnerHTML={{ __html: about }} />
-    </Text>
-  </Flex>
-)
-
-const Projects = ({ projects }) => (
-  <Flex flexDir="column" mb="20">
-    <TextTitle mb="6">Projects</TextTitle>
-    <Flex flexDir={["column", "row"]} justifyContent="space-between">
-      {projects.map((props, i) => {
-        return <Project key={props.image} i={i} {...props} />
-      })}
-    </Flex>
-  </Flex>
-)
-
-const Technologies = ({ technologies }) => (
-  <Flex
-    mt={[0, 32]}
-    mb={[10, 20]}
-    align="flex-start"
-    flexDir={["column", "row"]}
-  >
-    <TextTitle mb={[6, 0]}>Technologies I'm excited to work with</TextTitle>
-    <Stack px={[0, 4]} isInline flexWrap="wrap">
-      {technologies.map(tech => {
-        return (
-          <Badge
-            // border="2px solid"
-            // borderColor="purple.200"
-            fontFamily="Lato"
-            variant="subtle"
-            variantColor="purple"
-            fontSize="xl"
-            mb="2"
-          >
-            {tech}
-          </Badge>
-        )
-      })}
-    </Stack>
   </Flex>
 )
 

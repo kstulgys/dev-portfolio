@@ -11,11 +11,11 @@ import {
   IconButton,
 } from "@chakra-ui/core"
 
-const Header = ({ image, meImage }) => {
+const Header = ({ meImage }) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
-    <Flex as="header" position="relative" my={[0, 20]}>
+    <Flex as="header" my={[0, 20]}>
       <Flex
         flex="1"
         justifyContent="center"
@@ -27,7 +27,7 @@ const Header = ({ image, meImage }) => {
         <Image
           boxShadow="xl"
           mx="auto"
-          border="4px solid"
+          border="6px solid"
           borderColor="gray.200"
           src={meImage}
           height={[56, 64]}
@@ -57,36 +57,14 @@ const Header = ({ image, meImage }) => {
           Code and Design is my passion.
         </Text>
       </Flex>
-      <IconButton
-        size="lg"
-        p="0"
-        color="purple.400"
-        aria-label="toggle theme mode"
-        icon={colorMode === "light" ? "sun" : "moon"}
-        onClick={() => toggleColorMode()}
-        position="absolute"
-        top="0"
-        right="0"
-        mt={[4, 2]}
-        mr={[0, 2]}
-        bg="transparent"
-        // border="1px"
-        borderRadius="full"
-        // borderColor="gray.700"
-        _hover={{
-          bg: "transparent",
-        }}
-      />
     </Flex>
   )
 }
 Header.propTypes = {
-  image: PropTypes.string,
   meImage: PropTypes.string,
 }
 
 Header.defaultProps = {
-  image: ``,
   meImage: ``,
 }
 

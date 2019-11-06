@@ -1,5 +1,5 @@
 meImage: /assets/me.jpg
-title: A Fullstack Engineer
+title: Fullstack Engineer
 technologies:
   - TypeScript
   - JavaScript
@@ -19,50 +19,43 @@ technologies:
   - Redux
   - CSS-in-JS
   - GitHub
+
 projects:
-  - description: |
-      <p> Designed and developed personal portfolio website.</p>
-      <p>- Minimal flat design.</p>
-      <p>- Light and dark mode theme.</p>
+  - title: https://cricket.wiise.com/
     image: /assets/me.jpg
+    description: |
+      Developed support portal for Wiise.
+
+      **Wiise** - "Created by KPMG Australia, built on Microsoft and supported by Commonwealth Bank, Wiise is clever business management software".
+        - Designed UX/UI mockups.
+        - Participated in weekly time-boxed SCRUM meetings.
+        - Implemented style guide and theme.
+        - Build responsive and mobile first experience.
+        - Ensure the technical feasibility of UI/UX designs.
+    tags:
+      - React
+      - Gatsby
+      - Kentico Kontent (CMS)
+      - Rebass (CSS-in-JS)
+
+  - title: https://imkarolis.com
+    image: /assets/me.jpg
+    description: |
+      Designed and developed personal portfolio website.
+        * Minimal flat design.
+        * Light and dark mode theme support.
     tags:
       - React
       - Gatsby
       - Netlify (CMS)
       - Chakra-ui (CSS-in-JS)
-    title: 'https://imkarolis.com'
-  - description: |
-      <p>Developed support portal for Wiise.</p>
-      <p>Wiise - "Created by KPMG Australia, built on
-      Microsoft and supported by Commonwealth Bank, Wiise is clever business
-      management software".</p>
-      <p>- Designed UX/UI mockups.</p>
-      <p>- Participated in weekly time-boxed SCRUM meetings.</p>
-      <p>- Implemented style guide and theme.</p>
-      <p>- Build responsive and mobile first experience.</p>
-      <p>- Ensure the technical feasibility of UI/UX designs.</p>
-    image: /assets/estonian-saunas-hrezsflqf4i-unsplash.jpg
-    tags:
-      - React
-      - Kentico Kontent (CMS)
-      - Rebass (CSS-in-JS)
-    title: 'https://cricket.wiise.com'
-about: >-
-  Passionate fullstack developer successful at completing lucrative and
-  labor-intensive projects. 
+
+about: |
+  * Passionate fullstack developer successful at completing lucrative and labor-intensive projects.
+
+  * Over 6 years of experience doing engineering software demos, training, and technical support for clients.
+
+  * I get excited about opportunities to create mutually beneficial partnerships that drive growth on both sides of the relationship, specifically in the world of tech/web development. Want to connect? Feel free to email me at karolis.stulgys@gmail.com.  
 
 
-  Over 6 years of experience doing engineering software demos, training, and
-  technical support for clients.
-
-
-  I get excited about opportunities to create mutually beneficial partnerships
-  that drive growth on both sides of the relationship, specifically in the world
-  of tech/web development. 
-
-
-  Want to connect? Feel free to email me at karolis.stulgys@gmail.com.
-
-
-  Other themes that make me excited - human performance, food, longevity,
-  powerlifting, strength training, bodybuilding, meditation, yoga.
+  Other themes that make me excited - human performance, food, longevity, powerlifting, strength training, bodybuilding, meditation, yoga.

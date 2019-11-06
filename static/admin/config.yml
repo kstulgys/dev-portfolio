@@ -28,40 +28,16 @@ collections:
             widget: list
             allow_add: true
             fields:
-              - label: Project
-                name: project
-                widget: object
-                fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Image, name: image, widget: image }
-                  - { label: Description, name: sescription, widget: markdown }
-                  - {
-                      label: Tags,
-                      name: tags,
-                      widget: list,
-                      allow_add: true,
-                      default: ["React"],
-                    }
+              [
+                { label: Title, name: title, widget: string },
+                { label: Image, name: image, widget: image },
+                { label: Description, name: description, widget: markdown },
+                {
+                  label: Tags,
+                  name: tags,
+                  widget: list,
+                  allow_add: true,
+                  default: ["React"],
+                },
+              ]
           - { label: About, name: about, widget: markdown }
-            # options:
-            # [
-            #   "TypeScript",
-            #   "JavaScript",
-            #   "React",
-            #   "Node",
-            #   "GraphQL",
-            #   "Gatsby",
-            #   "Next",
-            #   "MongoDB",
-            #   "Firebase",
-            #   "Prisma",
-            #   "FaunaDB",
-            #   "Apollo Client",
-            #   "Apollo Server",
-            #   "Headless CMS",
-            #   "Jest",
-            #   "Testing-library",
-            #   "Redux",
-            #   "CSS-in-JS",
-            #   "GitHub",
-            # ],
