@@ -43,57 +43,9 @@ const IndexPage = props => {
       <ItemsToggle title="Projects" count={projects.length}>
         <Projects projects={projects} />
       </ItemsToggle>
-      {[].length > 0 && (
+      {null && (
         <ItemsToggle title="Talks" count={talks.length}>
-          <Grid
-            gridGap="6"
-            // gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
-            gridTemplateColumns={["1fr", "1fr 1fr 1fr"]}
-          >
-            {talks.map(({ title, image }) => (
-              <Link
-                borderRadius="md"
-                backgroundImage={image}
-                px={[4]}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                border="2px solid"
-                borderColor="gray.200"
-                height="64"
-                position="relative"
-              >
-                <Text textAlign="center" fontSize="3xl">
-                  {title}{" "}
-                </Text>
-                <Stack
-                  isInline
-                  flexWrap="wrap"
-                  position="absolute"
-                  bottom="0"
-                  left="0"
-                  width="full"
-                  p={[2]}
-                >
-                  {["@React Sydney"].map(conference => {
-                    return (
-                      <Badge
-                        // border="2px solid"
-                        // borderColor="purple.200"
-                        fontFamily="Lato"
-                        // variant="subtle"
-                        // variantColor="purple"
-                        fontSize="md"
-                        mt="2"
-                      >
-                        {conference}
-                      </Badge>
-                    )
-                  })}
-                </Stack>
-              </Link>
-            ))}
-          </Grid>
+          <Talks talks={talks} />
         </ItemsToggle>
       )}
       <About about={about} />
@@ -126,6 +78,60 @@ export const query = graphql`
     }
   }
 `
+
+const Talks = ({ talks }) => {
+  return (
+    <Grid
+      gridGap="6"
+      // gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+      gridTemplateColumns={["1fr", "1fr 1fr 1fr"]}
+    >
+      {talks.map(({ title, image }) => (
+        <Link
+          borderRadius="md"
+          backgroundImage={image}
+          px={[4]}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          border="2px solid"
+          borderColor="gray.200"
+          height="64"
+          position="relative"
+        >
+          <Text textAlign="center" fontSize="3xl">
+            {title}{" "}
+          </Text>
+          <Stack
+            isInline
+            flexWrap="wrap"
+            position="absolute"
+            bottom="0"
+            left="0"
+            width="full"
+            p={[2]}
+          >
+            {["@React Sydney"].map(conference => {
+              return (
+                <Badge
+                  // border="2px solid"
+                  // borderColor="purple.200"
+                  fontFamily="Lato"
+                  // variant="subtle"
+                  // variantColor="purple"
+                  fontSize="md"
+                  mt="2"
+                >
+                  {conference}
+                </Badge>
+              )
+            })}
+          </Stack>
+        </Link>
+      ))}
+    </Grid>
+  )
+}
 
 const ItemsToggle = ({ count, title, children }) => {
   return (
@@ -287,7 +293,7 @@ const Projects = ({ projects }) => (
 )
 
 const Contact = () => (
-  <Flex flexDir="column" my="20">
+  <Flex flexDir="column" my={[10, 16]}>
     <Flex justifyContent="center" mb="2">
       <TextTitle textAlign="center">Contact me</TextTitle>
     </Flex>
@@ -318,7 +324,7 @@ const Footer = () => (
       <Link isExternal href="https://www.gatsbyjs.org/">
         Gatsby
       </Link>{" "}
-      and 💖
+      and 💜
     </Text>
   </Flex>
 )
