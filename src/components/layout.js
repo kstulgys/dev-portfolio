@@ -22,6 +22,36 @@ import SEO from "./seo"
 import theme from "../theme"
 
 const Layout = ({ children }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CSSReset />
+      <ColorModeProvider>
+        <SEO />
+        <BgImage />
+        <AppContainer>{children}</AppContainer>
+      </ColorModeProvider>
+    </ThemeProvider>
+  )
+}
+
+const AppContainer = ({ children }) => (
+  <Flex overflowY="scroll" height="100vh" position="relative">
+    <Flex
+      as="main"
+      flex="1"
+      maxWidth="5xl"
+      mx="auto"
+      px="4"
+      flexDir="column"
+      position="relative"
+    >
+      <ThemeToggle />
+      {children}
+    </Flex>
+  </Flex>
+)
+
+const BgImage = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   // const bgColor = { light: "gray.100", dark: "gray.800" }
   const color = { light: "gray.800", dark: "gray.100" }
@@ -33,43 +63,21 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <CSSReset />
-      <ColorModeProvider>
-        <SEO />
-        <Flex
-          flexDir="column"
-          // minHeight="100vh"
-          color={color[colorMode]}
-          backgroundImage={`url(${bgUrl[colorMode]})`}
-          backgroundAttachment="fixed"
-          backgroundPosition="center"
-          backgroundRepeat="no-repeat"
-          backgroundSize="cover"
-          position="absolute"
-          opacity="0.05"
-          top="0"
-          bottom="0"
-          // width="full"
-        />
-        <Flex overflowY="scroll" height="100vh" position="relative">
-          <Flex
-            as="main"
-            flex="1"
-            maxWidth="5xl"
-            mx="auto"
-            px="4"
-            flexDir="column"
-            position="relative"
-            // zIndex="10"
-            // height="100vh"
-          >
-            <ThemeToggle />
-            {children}
-          </Flex>
-        </Flex>
-      </ColorModeProvider>
-    </ThemeProvider>
+    <Flex
+      flexDir="column"
+      height="100vh"
+      color={color[colorMode]}
+      backgroundImage={`url(${bgUrl[colorMode]})`}
+      backgroundAttachment="fixed"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      backgroundSize="cover"
+      position="absolute"
+      opacity="0.05"
+      top="0"
+      bottom="0"
+      width="full"
+    />
   )
 }
 
@@ -80,7 +88,7 @@ const ThemeToggle = () => {
 
   return (
     <IconButton
-      boxShadow="xl"
+      transform="scale(1.5)"
       size="lg"
       p="0"
       color="purple.400"
@@ -90,11 +98,9 @@ const ThemeToggle = () => {
       position="absolute"
       top="0"
       right="0"
-      m={[8]}
+      m={[6]}
       bg="transparent"
-      border="2px solid"
       borderRadius="full"
-      borderColor={color[colorMode]}
       _hover={{
         bg: "transparent",
       }}
