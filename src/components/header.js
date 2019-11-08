@@ -10,6 +10,7 @@ import {
   useColorMode,
   IconButton,
 } from "@chakra-ui/core"
+import Divider from "./Divider"
 
 const Header = ({ meImage }) => {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -50,7 +51,7 @@ const Header = ({ meImage }) => {
             <Text fontSize={["2xl", "3xl"]} fontFamily="Lato" width="auto">
               A Fullstack Engineer
             </Text>
-            <Box height="4px" bg="purple.400" />
+            <Divider />
           </Box>
         </Flex>
         <Text fontSize={["3xl", "4xl"]} fontFamily="Nova Mono" mt="2">

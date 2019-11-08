@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
         <SEO />
         <Flex
           flexDir="column"
-          height="100vh"
+          // minHeight="100vh"
           color={color[colorMode]}
           backgroundImage={`url(${bgUrl[colorMode]})`}
           backgroundAttachment="fixed"
@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
           opacity="0.05"
           top="0"
           bottom="0"
-          width="full"
+          // width="full"
         />
         <Flex overflowY="scroll" height="100vh" position="relative">
           <Flex
