@@ -65,12 +65,16 @@ projects:
       - Chakra-ui (CSS-in-JS)
     github: https://github.com/kstulgys/dev-portfolio
 
+talks:
+  - title: Gatsby 💖 Netlify CMS
+    image: /assets/me.jpg
+
 about: |
   * Passionate fullstack developer successful at completing lucrative and labor-intensive projects.
 
   * Over 6 years of experience doing engineering software demos, training, and technical support for clients.
 
-  * I get excited about opportunities to create mutually beneficial partnerships that drive growth on both sides of the relationship, specifically in the world of tech/web development. Want to connect? Feel free to email me at karolis.stulgys@gmail.com.  
+  * I get excited about opportunities to create mutually beneficial partnerships that drive growth on both sides of the relationship, specifically in the world of tech/web development.  
 
 
   Other themes that make me excited - human performance, food, longevity, powerlifting, strength training, bodybuilding, meditation, yoga.

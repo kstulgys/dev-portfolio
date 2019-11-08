@@ -4,6 +4,7 @@ import Markdown from "react-markdown"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Header from "../components/header"
+import Divider from "../components/Divider"
 import {
   Flex,
   Box,
@@ -15,28 +16,86 @@ import {
   useColorMode,
   Link,
   Grid,
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionPanel,
+  AccordionIcon,
 } from "@chakra-ui/core"
 import { FiMail, FiFileText, FiGithub, FiLinkedin } from "react-icons/fi"
 import { FaMediumM } from "react-icons/fa"
 
 const IndexPage = props => {
-  console.log({ props })
   const {
     meImage,
     about,
     technologies,
     title,
     projects,
+    talks,
   } = props.data.allContentYaml.nodes[0]
-
-  // console.log(meImage, about, technologies, title, projects)
 
   return (
     <Layout>
       <SEO title="Home" />
       <Header title={title} meImage={meImage} />
       <Technologies technologies={technologies} />
-      <Projects projects={projects} />
+      <ItemsToggle title="Projects" count={projects.length}>
+        <Projects projects={projects} />
+      </ItemsToggle>
+      {[].length > 0 && (
+        <ItemsToggle title="Talks" count={talks.length}>
+          <Grid
+            gridGap="6"
+            // gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+            gridTemplateColumns={["1fr", "1fr 1fr 1fr"]}
+          >
+            {talks.map(({ title, image }) => (
+              <Link
+                borderRadius="md"
+                backgroundImage={image}
+                px={[4]}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                border="2px solid"
+                borderColor="gray.200"
+                height="64"
+                position="relative"
+              >
+                <Text textAlign="center" fontSize="3xl">
+                  {title}{" "}
+                </Text>
+                <Stack
+                  isInline
+                  flexWrap="wrap"
+                  position="absolute"
+                  bottom="0"
+                  left="0"
+                  width="full"
+                  p={[2]}
+                >
+                  {["@React Sydney"].map(conference => {
+                    return (
+                      <Badge
+                        // border="2px solid"
+                        // borderColor="purple.200"
+                        fontFamily="Lato"
+                        // variant="subtle"
+                        // variantColor="purple"
+                        fontSize="md"
+                        mt="2"
+                      >
+                        {conference}
+                      </Badge>
+                    )
+                  })}
+                </Stack>
+              </Link>
+            ))}
+          </Grid>
+        </ItemsToggle>
+      )}
       <About about={about} />
       <Contact />
       <Footer />
@@ -52,6 +111,10 @@ export const query = graphql`
         about
         technologies
         title
+        talks {
+          title
+          image
+        }
         projects {
           description
           image
@@ -63,15 +126,41 @@ export const query = graphql`
     }
   }
 `
-const TextTitle = props => (
-  <Text
-    as="h3"
-    fontSize="2xl"
-    textTransform="uppercase"
-    letterSpacing="0.125em"
-    mb={[6, 10]}
-    {...props}
-  />
+
+const ItemsToggle = ({ count, title, children }) => {
+  return (
+    <AccordionItem
+      mb={[16, 20]}
+      style={{ marginLeft: "-1rem", marginRight: "-1rem" }}
+    >
+      <AccordionHeader>
+        <Flex flex="1" textAlign="left">
+          <TextTitle mb={0}>
+            {title} ({count})
+          </TextTitle>
+        </Flex>
+        <AccordionIcon size="10" pl="auto" />
+      </AccordionHeader>
+      <AccordionPanel p="0" mt={[6, 10]}>
+        {children}
+      </AccordionPanel>
+    </AccordionItem>
+  )
+}
+const TextTitle = ({ children, ...rest }) => (
+  <Flex mb={[6, 10]} {...rest}>
+    <Box>
+      <Text
+        as="h3"
+        fontSize="2xl"
+        textTransform="uppercase"
+        letterSpacing="0.125em"
+      >
+        {children}
+      </Text>
+      {/* <Divider /> */}
+    </Box>
+  </Flex>
 )
 
 const Technologies = ({ technologies }) => (
@@ -81,9 +170,12 @@ const Technologies = ({ technologies }) => (
     align="flex-start"
     flexDir={["column", "row"]}
   >
-    <TextTitle mt="2" mb={[6, 0]}>
-      Technologies I'm excited to work with
-    </TextTitle>
+    <Box>
+      <TextTitle mt="2" mb={[6, 0]}>
+        Technologies I'm excited to work with
+      </TextTitle>
+    </Box>
+
     <Stack px={[0, 6]} isInline flexWrap="wrap">
       {technologies.map(tech => {
         return (
@@ -104,20 +196,27 @@ const Technologies = ({ technologies }) => (
   </Flex>
 )
 
-const Project = ({ i, title, image, description, tags, github }) => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  const bgColor = { light: "white", dark: "transparent" }
-  const color = { light: "gray.800", dark: "gray.100" }
-
+const Project = ({
+  i,
+  title,
+  image,
+  description,
+  tags,
+  github,
+  ...otherProps
+}) => {
+  // const { colorMode, toggleColorMode } = useColorMode()
+  // const bgColor = { light: "white", dark: "transparent" }
+  // const color = { light: "gray.800", dark: "gray.100" }
   return (
     <Flex
       // bg={bgColor[colorMode]}
       // color={color[colorMode]}
       width="full"
       minHeight="35vh"
-      boxShadow="xl"
+      boxShadow="md"
       fontFamily="Lato"
-      borderRadius="lg"
+      borderRadius="md"
       overflow="hidden"
       border="2px solid"
       borderColor="gray.200"
@@ -127,7 +226,7 @@ const Project = ({ i, title, image, description, tags, github }) => {
           <Box mb="4">
             <Link isExternal href={title}>
               <Text
-                fontWeight="black"
+                fontWeight="bold"
                 fontSize="2xl"
                 // textDecoration="none"
                 // _hover={{
@@ -138,10 +237,10 @@ const Project = ({ i, title, image, description, tags, github }) => {
               </Text>
             </Link>
 
-            <Box height="1" bg="purple.400" />
+            {/* <Box height="1" bg="purple.400" /> */}
           </Box>
         </Flex>
-        <Text flex="1" fontSize="lg">
+        <Text flex="1" fontSize="lg" fontWeight="lighter">
           <Markdown source={description} />
         </Text>
         <Stack isInline mt="6" flexWrap="wrap">
@@ -166,19 +265,18 @@ const Project = ({ i, title, image, description, tags, github }) => {
 const About = ({ about }) => (
   <Flex flexDir="column" mb="20">
     <TextTitle>About</TextTitle>
-    <Text fontFamily="Lato" fontSize="xl">
+    <Text fontFamily="Lato" fontSize="xl" fontWeight="lighter">
       <Markdown source={about} />
     </Text>
   </Flex>
 )
 
 const Projects = ({ projects }) => (
-  <Flex flexDir="column" mb={[16, 20]}>
-    <TextTitle>Projects</TextTitle>
+  <Flex flexDir="column">
     <Flex flexDir={["column", "row"]} justifyContent="space-between">
       <Grid
         gridGap="6"
-        gridTemplateColumns="repeat(auto-fit, minmax(325px, 1fr))"
+        gridTemplateColumns="repeat(auto-fit, minmax(350px, 1fr))"
       >
         {projects.map((props, i) => {
           return <Project key={props.image} i={i} {...props} />
@@ -189,8 +287,10 @@ const Projects = ({ projects }) => (
 )
 
 const Contact = () => (
-  <Flex flexDir="column" mb="20">
-    <TextTitle textAlign="center">Contact me</TextTitle>
+  <Flex flexDir="column" my="20">
+    <Flex justifyContent="center" mb="2">
+      <TextTitle textAlign="center">Contact me</TextTitle>
+    </Flex>
     <Stack isInline align="center" justifyContent="center" spacing={[3, 8]}>
       <Link isExternal href="mailto:karolis.stulgys@gmail.com">
         <Box as={FiMail} size="12" strokeWidth="1" />
@@ -214,7 +314,7 @@ const Contact = () => (
 const Footer = () => (
   <Flex justifyContent="center" py={10}>
     <Text>
-      Built with{" "}
+      ⓒ 2019, Built with{" "}
       <Link isExternal href="https://www.gatsbyjs.org/">
         Gatsby
       </Link>{" "}
