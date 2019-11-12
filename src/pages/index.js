@@ -24,6 +24,8 @@ import {
 } from "@chakra-ui/core"
 import { FiMail, FiFileText, FiGithub, FiLinkedin } from "react-icons/fi"
 import { FaMediumM } from "react-icons/fa"
+import WhatsNew from "../components/WhatsNew";
+import { TextTitle } from "../components/UI";
 
 const IndexPage = props => {
   const {
@@ -43,11 +45,12 @@ const IndexPage = props => {
       <ItemsToggle title="Projects" count={projects.length}>
         <Projects projects={projects} />
       </ItemsToggle>
-      {null && (
+      {null &&
         <ItemsToggle title="Talks" count={talks.length}>
           <Talks talks={talks} />
         </ItemsToggle>
-      )}
+      }
+      <WhatsNew />
       <About about={about} />
       <Contact />
       <Footer />
@@ -83,7 +86,6 @@ const Talks = ({ talks }) => {
   return (
     <Grid
       gridGap="6"
-      // gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
       gridTemplateColumns={["1fr", "1fr 1fr 1fr"]}
     >
       {talks.map(({ title, image }) => (
@@ -153,21 +155,7 @@ const ItemsToggle = ({ count, title, children }) => {
     </AccordionItem>
   )
 }
-const TextTitle = ({ children, ...rest }) => (
-  <Flex mb={[6, 10]} {...rest}>
-    <Box>
-      <Text
-        as="h3"
-        fontSize="2xl"
-        textTransform="uppercase"
-        letterSpacing="0.125em"
-      >
-        {children}
-      </Text>
-      {/* <Divider /> */}
-    </Box>
-  </Flex>
-)
+
 
 const Technologies = ({ technologies }) => (
   <Flex
@@ -234,10 +222,10 @@ const Project = ({
               <Text
                 fontWeight="bold"
                 fontSize="2xl"
-                // textDecoration="none"
-                // _hover={{
-                //   textDecoration: "none",
-                // }}
+              // textDecoration="none"
+              // _hover={{
+              //   textDecoration: "none",
+              // }}
               >
                 {title.split("//")[1]}
               </Text>
@@ -276,6 +264,7 @@ const About = ({ about }) => (
     </Text>
   </Flex>
 )
+
 
 const Projects = ({ projects }) => (
   <Flex flexDir="column">
