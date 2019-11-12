@@ -15,7 +15,7 @@ const WhatsNew = () => {
   return (
     <Flex flexDir="column" mb="20">
       <TextTitle>What's new</TextTitle>
-      <Text fontSize='3xl' mb='4'>Talks</Text>
+      <Text fontSize='3xl' mb='4'>Talking</Text>
       <Grid
         mb='10'
         gridGap="6"
