@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import {
@@ -82,7 +82,14 @@ const BgImage = () => {
 }
 
 const ThemeToggle = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const currentColorMode =
+    typeof window === "undefined"
+      ? "dark"
+      : window.localStorage.getItem("darkMode") === "true"
+      ? "dark"
+      : "light"
+
+  const { colorMode, toggleColorMode } = useColorMode(currentColorMode)
   const icon = { light: "sun", dark: "moon" }
   const color = { light: "gray.800", dark: "gray.100" }
 
