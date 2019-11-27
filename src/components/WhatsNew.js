@@ -6,14 +6,9 @@ const WhatsNew = () => {
   return (
     <Flex flexDir={["column"]} mb="20">
       <TextTitle>What's new</TextTitle>
-      <Grid
-        // mb={[0, 10]}
-        gridGap={[2, 6]}
-        // gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
-        gridTemplateColumns={["1fr", "1fr 1fr"]}
-      >
+      <Grid gridTemplateColumns={["1fr", "1fr 1fr"]}>
         <Box>
-          <Grid mb="10" gridGap="6" gridTemplateColumns={["1fr"]}>
+          <Grid gridGap="6" gridTemplateColumns={["1fr"]}>
             {[{ title: "Gatsby 💖 Netlify CMS" }].map(({ title, image }) => (
               <Link
                 width="full"
@@ -65,78 +60,6 @@ const WhatsNew = () => {
                         fontFamily="Lato"
                         // variant="subtle"
                         // variantColor="purple"
-                        fontSize="sm"
-                        mt="2"
-                      >
-                        {conference}
-                      </Badge>
-                    )
-                  })}
-                </Stack>
-              </Link>
-            ))}
-          </Grid>
-        </Box>
-        <Box>
-          {/* <Text fontSize='3xl' mb='4'>Mentoring</Text> */}
-          <Grid
-            gridGap="6"
-            // gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
-            gridTemplateColumns={["1fr"]}
-          >
-            {[{ title: "MusesCodeJS workshop" }].map(({ title, image }) => (
-              <Link
-                borderRadius="md"
-                // backgroundImage={image}
-                px={[4]}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                border="2px solid"
-                borderColor="gray.200"
-                height="64"
-                position="relative"
-              >
-                <Badge
-                  position="absolute"
-                  top="0"
-                  right="0"
-                  // border="2px solid"
-                  // borderColor="purple.200"
-                  fontFamily="Lato"
-                  variant="subtle"
-                  fontSize="sm"
-                  m="2"
-                >
-                  Mentoring
-                </Badge>
-                <Box>
-                  <Text textAlign="center" fontSize="3xl" lineHeight="short">
-                    {title}
-                  </Text>
-                  <Box textAlign="center" mt="2">
-                    <Text>@Microsoft Reactor</Text>
-                    <Text>16/11/2019 9AM</Text>
-                  </Box>
-                </Box>
-
-                <Stack
-                  isInline
-                  flexWrap="wrap"
-                  position="absolute"
-                  bottom="0"
-                  left="0"
-                  width="full"
-                  p={[2]}
-                >
-                  {["#MusesCodeJS", "#workshop"].map(conference => {
-                    return (
-                      <Badge
-                        // border="2px solid"
-                        // borderColor="purple.200"
-                        fontFamily="Lato"
-                        variant="subtle"
-                        variantColor="purple"
                         fontSize="sm"
                         mt="2"
                       >

@@ -24,8 +24,8 @@ import {
 } from "@chakra-ui/core"
 import { FiMail, FiFileText, FiGithub, FiLinkedin } from "react-icons/fi"
 import { FaMediumM } from "react-icons/fa"
-import WhatsNew from "../components/WhatsNew";
-import { TextTitle } from "../components/UI";
+import WhatsNew from "../components/WhatsNew"
+import { TextTitle } from "../components/UI"
 
 const IndexPage = props => {
   const {
@@ -45,11 +45,10 @@ const IndexPage = props => {
       {/* <ItemsToggle title="Projects" count={projects.length}>
         <Projects projects={projects} />
       </ItemsToggle> */}
-      {null &&
-        <ItemsToggle title="Talks" count={talks.length}>
-          <Talks talks={talks} />
-        </ItemsToggle>
-      }
+      {/* {null && */}
+      <ItemsToggle title="Past events" count={talks.length}>
+        <Talks talks={talks} />
+      </ItemsToggle>
       <WhatsNew />
       <About about={about} />
       <Contact />
@@ -86,12 +85,14 @@ const Talks = ({ talks }) => {
   return (
     <Grid
       gridGap="6"
-      gridTemplateColumns={["1fr", "1fr 1fr 1fr"]}
+      // gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+      gridTemplateColumns={["1fr", "1fr 1fr"]}
+      mx={[4]}
     >
-      {talks.map(({ title, image }) => (
+      {[{ title: "MusesCodeJS workshop" }].map(({ title, image }) => (
         <Link
           borderRadius="md"
-          backgroundImage={image}
+          // backgroundImage={image}
           px={[4]}
           display="flex"
           justifyContent="center"
@@ -101,9 +102,29 @@ const Talks = ({ talks }) => {
           height="64"
           position="relative"
         >
-          <Text textAlign="center" fontSize="3xl">
-            {title}{" "}
-          </Text>
+          <Badge
+            position="absolute"
+            top="0"
+            right="0"
+            // border="2px solid"
+            // borderColor="purple.200"
+            fontFamily="Lato"
+            variant="subtle"
+            fontSize="sm"
+            m="2"
+          >
+            Mentoring
+          </Badge>
+          <Box>
+            <Text textAlign="center" fontSize="3xl" lineHeight="short">
+              {title}
+            </Text>
+            <Box textAlign="center" mt="2">
+              <Text>@Microsoft Reactor</Text>
+              <Text>16/11/2019 9AM</Text>
+            </Box>
+          </Box>
+
           <Stack
             isInline
             flexWrap="wrap"
@@ -113,15 +134,15 @@ const Talks = ({ talks }) => {
             width="full"
             p={[2]}
           >
-            {["@React Sydney"].map(conference => {
+            {["#MusesCodeJS", "#workshop"].map(conference => {
               return (
                 <Badge
                   // border="2px solid"
                   // borderColor="purple.200"
                   fontFamily="Lato"
-                  // variant="subtle"
-                  // variantColor="purple"
-                  fontSize="md"
+                  variant="subtle"
+                  variantColor="purple"
+                  fontSize="sm"
                   mt="2"
                 >
                   {conference}
@@ -155,7 +176,6 @@ const ItemsToggle = ({ count, title, children }) => {
     </AccordionItem>
   )
 }
-
 
 const Technologies = ({ technologies }) => (
   <Flex
@@ -222,10 +242,10 @@ const Project = ({
               <Text
                 fontWeight="bold"
                 fontSize="2xl"
-              // textDecoration="none"
-              // _hover={{
-              //   textDecoration: "none",
-              // }}
+                // textDecoration="none"
+                // _hover={{
+                //   textDecoration: "none",
+                // }}
               >
                 {title.split("//")[1]}
               </Text>
@@ -264,7 +284,6 @@ const About = ({ about }) => (
     </Text>
   </Flex>
 )
-
 
 const Projects = ({ projects }) => (
   <Flex flexDir="column">
