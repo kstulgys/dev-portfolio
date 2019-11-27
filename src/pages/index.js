@@ -42,9 +42,9 @@ const IndexPage = props => {
       <SEO title="Home" />
       <Header title={title} meImage={meImage} />
       <Technologies technologies={technologies} />
-      <ItemsToggle title="Projects" count={projects.length}>
+      {/* <ItemsToggle title="Projects" count={projects.length}>
         <Projects projects={projects} />
-      </ItemsToggle>
+      </ItemsToggle> */}
       {null &&
         <ItemsToggle title="Talks" count={talks.length}>
           <Talks talks={talks} />
