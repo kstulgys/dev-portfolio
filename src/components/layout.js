@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
       <CSSReset />
       <ColorModeProvider>
         <SEO />
-        <BgImage />
+        {/* <BgImage /> */}
         <AppContainer>{children}</AppContainer>
       </ColorModeProvider>
     </ThemeProvider>
