@@ -164,9 +164,7 @@ const ItemsToggle = ({ count, title, children }) => {
     >
       <AccordionHeader>
         <Flex flex="1" textAlign="left">
-          <TextTitle mb={0}>
-            {title} ({count})
-          </TextTitle>
+          <TextTitle mb={0}>{title}</TextTitle>
         </Flex>
         <AccordionIcon size="10" pl="auto" />
       </AccordionHeader>
